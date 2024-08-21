@@ -50,6 +50,10 @@ async function viewStudent(req, res) {
                 }
             },
             {
+                $unwind:"$courseDetails"
+
+            },
+            {
                 $lookup:{
                     from:"staffs",
                     localField:'staffname',
